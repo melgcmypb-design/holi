@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+}
+
+.container {
+    text-align: center;
+    max-width: 37.5rem;
+    margin: 0 auto;
+    padding: 1.25rem;
+}
+
+.Titulo {
+margin-bottom: 1.25rem;
+}
+
+.Game-info {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    gap: 0.8rem;
+}
+
+.Game-info span {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    flex: 1;
+    text-align: center;
+}
+
+.start-stop-btn {
+    background-color: turquoise;
+    border: none;
+    color: black;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    font-size: 1rem;
+    margin: 1rem 0.0625rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.start-stop-btn:hover {
+    background-color: turquoise;
+}
+
+.start-stop-btn:active {
+    background-color: rgb(57, 206, 191);
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.625rem;
+    max-width: 37.5rem;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.card {
+    aspect-ratio: 3/4;
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 0; */
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    border-radius: 0.3rem;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+    background-color: gray;
+    font-size: 2rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.game-board.fade-out {
+    animation: fadeOut 0.5s ease-in-out;
+}
+
+@media (max-width: 37.5rem) {
+    .game-board {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
